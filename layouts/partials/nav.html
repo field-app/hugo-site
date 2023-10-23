@@ -1,0 +1,11 @@
+<nav>
+  <ul class="flex gap-1">
+    {{ range .Site.Menus.mainmenu }}
+      <li>
+        <a class="block text-blue-400 underline" href="{{ .URL }}"
+          >{{ .Name }}</a
+        >
+      </li>
+    {{ end }}
+  </ul>
+</nav>

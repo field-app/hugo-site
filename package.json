@@ -1,0 +1,39 @@
+{
+  "name": "field-marketing",
+  "version": "1.0.0",
+  "description": "The static website for marketing purposes for Field.",
+  "config": {
+    "hugoDir": "./node_modules/.bin/hugo",
+    "hugo": "./node_modules/.bin/hugo/hugo"
+  },
+  "scripts": {
+    "dev": "concurrently npm:watch:tailwind npm:watch:hugo",
+    "build": "concurrently npm:build:tailwind npm:build:hugo",
+    "watch:hugo": "$npm_package_config_hugo server --gc --disableFastRender --config hugo.toml",
+    "build:hugo": "$npm_package_config_hugo --gc --cleanDestinationDir --minify --config hugo.toml",
+    "build:tailwind": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
+    "watch:tailwind": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "format:check": "prettier . --check",
+    "format:all": "prettier . --write",
+    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination $npm_package_config_hugoDir"
+  },
+  "contributors": [
+    {
+      "name": "Chris Holland",
+      "email": "chris@thefieldapp.com",
+      "url": "https://github.com/chrishollandaise"
+    }
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "hugo-installer": "^4.0.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwindcss": "^3.3.3"
+  },
+  "otherDependencies": {
+    "hugo": "0.119.0"
+  }
+}

@@ -1,0 +1,21 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Field'
+[menu]
+    [[menu.mainmenu]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+    [[menu.mainmenu]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog"
+    weight = 2
+    [[menu.mainmenu]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/faq"
+    weight = 3
+[taxonomies]
+    tag = "tags"
