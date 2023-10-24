@@ -6,7 +6,7 @@
         <p>{{ .Content }}</p>
       {{ end }}
     </section>
-    {{ range where .Pages "or" (ne .File.BaseFileName "opening") (ne .File.BaseFileName "closing") }}
+    {{ range where ( where .Pages .File.BaseFileName "!=" "opening" ) .File.BaseFileName "!=" "closing"}}
       <article>
         <h3 class="text-lg font-bold">{{ .Title }}</h3>
         <p>{{ .Content }}</p>
