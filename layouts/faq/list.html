@@ -6,11 +6,18 @@
         <p>{{ .Content }}</p>
       {{ end }}
     </section>
-    {{ range where ( where .Pages .File.BaseFileName "!=" "opening" ) .File.BaseFileName "!=" "closing"}}
-      <article>
-        <h3 class="text-lg font-bold">{{ .Title }}</h3>
-        <p>{{ .Content }}</p>
-      </article>
+    {{ range where ( where .Pages .File.BaseFileName "!=" "opening" ) .File.BaseFileName "!=" "closing" }}
+      <div class="container mx-auto">
+        <div class="columns-1">
+          {{/* List of questions section beginning */}}
+          <article>
+            <h3 class="text-lg font-bold">
+              {{ .Title }}
+            </h3>
+            {{/*  <p>{{ .Content }}</p>  */}}
+          </article>
+        </div>
+      </div>
     {{ end }}
     <section class="mt-5">
       {{ with .Site.GetPage "/closing" }}
