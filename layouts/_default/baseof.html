@@ -3,10 +3,12 @@
   <head>
     {{ partial "head" . }}
   </head>
-  <body>
+  <body class="bg-stone-950 text-white">
     {{ partial "header" . }}
     {{ partial "nav" . }}
-    {{ block "main" . }}{{ end }}
+    <div class="mx-auto max-w-6xl">
+      {{ block "main" . }}{{ end }}
+    </div>
     {{ partial "footer" . }}
   </body>
 </html>
