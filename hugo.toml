@@ -7,15 +7,20 @@ title = 'Field'
     name = "Home"
     url = "/"
     weight = 1
+    [[main.mainmenu]]
+    identifier = "team"
+    name = "Team"
+    url = "/team"
+    weight = 2
     [[menu.mainmenu]]
     identifier = "blog"
     name = "Blog"
     url = "/blog"
-    weight = 2
+    weight = 3
     [[menu.mainmenu]]
     identifier = "faq"
     name = "FAQ"
     url = "/faq"
-    weight = 3
+    weight = 4
 [taxonomies]
     tag = "tags"
