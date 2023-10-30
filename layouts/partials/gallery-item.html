@@ -1,0 +1,39 @@
+{{ $backgroundColor := "bg-gray-100" }}
+{{ $textColor1 := "text-black" }}
+{{ $textColor2 := "text-black" }}
+{{ $textColor3 := "text-stone-900" }}
+
+{{ if .dark }}
+  {{ $backgroundColor = "bg-stone-900" }}
+  {{ $textColor1 = "text-white" }}
+  {{ $textColor2 = "text-stone-500" }}
+  {{ $textColor3 = "text-stone-500" }}
+{{ end }}
+
+<a href="/{{ .page.File.Dir }}">
+    <div
+      class="max-w-[360px] h-full overflow-hidden rounded-lg {{$backgroundColor}}"
+    >
+      {{ with .page.Resources.GetMatch "cover.*" }}
+        <img
+          class="object-cover"
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          alt=""
+        />
+      {{ end }}
+      <div class="px-5 py-3">
+        <h3 class="mt-[0.5rem] text-2xl font-bold {{$textColor1}}">
+          {{ .page.Title }}
+        </h3>
+        <p class="mt-5 {{$textColor2}}">
+          {{ .page.Content | truncate 80 | plainify }}
+        </p>
+        <p class="mt-10 text-right text-xs font-bold {{$textColor3}}">
+          {{ page.Date | time.Format "Jan 2, 2006" }}
+        </p>
+      </div>
+    </div>
+  </a>
+</li>

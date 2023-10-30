@@ -2,3 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Bilbo&family=Inter:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+h1 {
+    @apply text-6xl py-8 font-bold ;
+  }
+  
+h2 {
+    @apply text-5xl my-8 font-bold;
+  }
+  
+h3 {
+    @apply text-4xl my-8 font-bold;
+  }
+  
+h4{
+    @apply text-3xl my-8 font-bold ;
+  }
+  
+h5 {
+    @apply text-2xl my-8 font-bold ;
+  }
+  
+h6 {
+    @apply text-xl my-8 font-bold ;
+  }
