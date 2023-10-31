@@ -1,29 +1,27 @@
 {{ define "main" }}
   <main>
-    <section>
-      {{ with .Site.GetPage "/opening" }}
-        <h1 class="text-2xl font-bold">{{ .Title }}</h1>
+    {{ partial "prelude" (dict
+      "Header" "FAQs"
+      "Subtitle" "Welcome to Field's FAQs page! Below you'll find answers to common questions about our sports-focused social media platform. If you have any additional inquiries or require further assistance, feel free to contact us directly.")
+    }}
+    {{ range .Pages }}
+      <article>
+        <h3
+          class="mb-5 flex cursor-pointer justify-between rounded-md bg-stone-900 p-5 text-lg font-normal"
+        >
+          {{ .Title }}
+          <div class="after:content-['_↓']"></div>
+        </h3>
         <p>{{ .Content }}</p>
-      {{ end }}
-    </section>
-    {{ range where ( where .Pages .File.BaseFileName "!=" "opening" ) .File.BaseFileName "!=" "closing" }}
-      <div class="container mx-auto">
-        <div class="columns-1">
-          {{/* List of questions section beginning */}}
-          <article>
-            <h3 class="text-lg font-bold">
-              {{ .Title }}
-            </h3>
-            {{/*  <p>{{ .Content }}</p>  */}}
-          </article>
-        </div>
-      </div>
+      </article>
     {{ end }}
-    <section class="mt-5">
-      {{ with .Site.GetPage "/closing" }}
-        <h1 class="text-2xl font-bold">{{ .Title }}</h1>
-        <p>{{ .Content }}</p>
-      {{ end }}
+    <section class="mt-10">
+      <h1 class="text-center text-5xl font-bold">Still Have Questions</h1>
+      <p class="mx-auto my-16 max-w-[75%] text-center text-stone-400">
+        If you have any questions that aren't covered here, don't hesitate to
+        email us directly at contact@thefieldapp.com. Our team is always ready
+        to assist you with any inquiries or concerns.
+      </p>
     </section>
   </main>
 {{ end }}
