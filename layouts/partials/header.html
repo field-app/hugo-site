@@ -1,5 +1,6 @@
 <header class="flex w-full justify-between  px-20 py-10">
-  <div>Logo</div>
+  {{ $asset := resources.Get "/images/192x75_logo.png" }}
+  <img alt="" src="{{ $asset.RelPermalink }}" class="h-8" />
   <nav>
     <ul class="flex gap-5">
       {{ range .Site.Menus.mainmenu }}
