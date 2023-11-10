@@ -1,0 +1,12 @@
+<div
+  class="flex max-w-sm flex-col items-center rounded-lg bg-stone-200 px-5 py-16"
+>
+  {{ $img := resources.Get .ImagePath }}
+  <figure class="image">
+    <img alt="Binoculars" src="{{ $img.RelPermalink }}" />
+  </figure>
+  <h3 class="text-center">{{ .Title }}</h3>
+  <p class="text-center">
+    {{ .Subtitle }}
+  </p>
+</div>
