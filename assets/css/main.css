@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Bilbo&family=Inter:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+body {
+  @apply h-full
+}
 
 h1 {
     @apply text-6xl py-8 font-bold ;
@@ -26,3 +29,8 @@ h5 {
 h6 {
     @apply text-xl my-8 font-bold ;
   }
+
+.fluid {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
