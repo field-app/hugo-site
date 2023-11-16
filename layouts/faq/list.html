@@ -1,22 +1,66 @@
 {{ define "main" }}
   <main>
-    <section>
-      {{ with .Site.GetPage "/opening" }}
-        <h1 class="text-2xl font-bold">{{ .Title }}</h1>
-        <p>{{ .Content }}</p>
-      {{ end }}
-    </section>
-    {{ range where ( where .Pages .File.BaseFileName "!=" "opening" ) .File.BaseFileName "!=" "closing" }}
-      <article>
-        <h3 class="text-lg font-bold">{{ .Title }}</h3>
-        <p>{{ .Content }}</p>
-      </article>
+    {{ partial "prelude" (dict
+      "Header" "FAQs"
+      "Subtitle" "Welcome to Field's FAQs page! Below you'll find answers to common questions about our sports-focused social media platform. If you have any additional inquiries or require further assistance, feel free to <a href=\"mailto: contact@thefieldapp.com\">contact us</a>  directly.")
+    }}
+    {{ range .Pages }}
+      <section class="mx-auto max-w-[75%]">
+        <article>
+          <h3
+            class="toggleBtn mb-5 flex cursor-pointer justify-between rounded-md bg-stone-900 p-5 text-lg font-normal"
+          >
+            <p class="basis-3/4">
+              {{ .Title }}
+            </p>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                height="24px"
+                width="24px"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                  height="24px"
+                  width="24px"
+                ></path>
+              </svg>
+            </div>
+          </h3>
+          <div
+            class="answer mb-5 mt-4 hidden justify-between rounded-md bg-green-400 p-5 font-normal text-black"
+          >
+            {{ .Content }}
+          </div>
+        </article>
+      </section>
     {{ end }}
-    <section class="mt-5">
-      {{ with .Site.GetPage "/closing" }}
-        <h1 class="text-2xl font-bold">{{ .Title }}</h1>
-        <p>{{ .Content }}</p>
-      {{ end }}
+    <section class="mt-10">
+      <h1 class="mx-auto max-w-[75%] text-left text-5xl font-bold">
+        Still Have Questions
+      </h1>
+      <p class="mx-auto mb-8 max-w-[75%] text-left text-stone-400">
+        If you have any questions that aren't covered here, don't hesitate to
+        email us directly at
+        <a href="mailto: contact@thefieldapp.com">contact@thefieldapp.com</a>.
+        Our team is always ready to assist you with any inquiries or concerns.
+      </p>
     </section>
+    <script>
+      const answers = document.querySelectorAll(".answer");
+      const toggleBtns = document.querySelectorAll(".toggleBtn");
+      for (let i = 0; i <= answers.length; i++) {
+        toggleBtns[i].addEventListener("click", () => {
+          answers[i].classList.toggle("hidden");
+        });
+      }
+    </script>
   </main>
 {{ end }}
