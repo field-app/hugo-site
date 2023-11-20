@@ -4,23 +4,33 @@
       "Header" "Team"
       "Subtitle" "Our dedicated team is passionate about revolutionizing the talent recruitment landscape across high school & college athletics, and providing amateur athletes and recruiters with the necessary tools to maximize potential mutually and collectively. We're a diverse and passionate group with a mission to enable athletes and recruiters for success on (and off) Field. Feel free to reach out to any of us if you have any questions, suggestions, or just want to say hello!")
     }}
-    {{ range .Pages }}
     <section class="mx-auto max-w-[75%]">
-      <div
-        class="flex h-screen columns-3 justify-between gap-5"
-      >
-        <div class="max-h-[500px] max-w-[300px] rounded-md bg-stone-700 p-3">
-          <img
-            class="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-500"
-            src=""
-            alt="Profile Image"
-          />
-          <h3 class="mb-2 text-center text-xl font-semibold">{{ .Title }}</h3>
-          <p class="text-center text-green-400">Co-Founder + Job Title</p>
-          <p class="mt-2 text-gray-500">{{ .Content }}</p>
-        </div>
+      <ul class="flex h-screen columns-3 justify-between gap-5">
+        {{ range .Pages }}
+          <li>
+            <div
+              class="max-h-[500px] max-w-[300px] rounded-md bg-stone-700 p-3"
+            >
+              <img
+                src=""
+                class="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-500"
+                alt="Profile Image"
+              />
+              <h3 class="mb-2 text-center text-xl font-semibold">
+                {{ .Title }}
+              </h3>
+              <p class="text-center text-green-400">{{ .Params.header }}</p>
+              <p class="text-center">
+                {{ .Params.major }}
+              </p>
+              <p class="text-center">
+                {{ .Params.college }}
+              </p>
+              <p class="mt-2 text-gray-500">{{ .Content }}</p>
+            </div>
+          </li>
         {{ end }}
-    </div>
+      </ul>
     </section>
   </main>
 {{ end }}
