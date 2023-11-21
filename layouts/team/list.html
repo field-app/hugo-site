@@ -5,28 +5,31 @@
       "Subtitle" "Our dedicated team is passionate about revolutionizing the talent recruitment landscape across high school & college athletics, and providing amateur athletes and recruiters with the necessary tools to maximize potential mutually and collectively. We're a diverse and passionate group with a mission to enable athletes and recruiters for success on (and off) Field. Feel free to reach out to any of us if you have any questions, suggestions, or just want to say hello!")
     }}
     <section class="mx-auto max-w-[75%]">
-      <ul class="flex h-screen columns-3 justify-between gap-5">
+      <ul class="flex h-screen columns-3 justify-center gap-5">
         {{ range .Pages }}
           <li>
-            <div
-              class="max-h-[500px] max-w-[300px] rounded-md bg-stone-700 p-3"
-            >
+            <div class="max-w-[300px] rounded-md bg-stone-800 px-5 pb-16">
+              {{/* needed: white border, bigger sizing (12x bigger), get images from fardin for upload. for footer: find out where content gets weird looking when adjusting window size (inspect element - looks like there's an issue around the 1000 mark of pixels) run a media query that stacks the content on top of another rather than displaying as 3 columns in full screen (this involves applying a responsive tag to the div). Header text needs to be slightly bigger. */}}
               <img
                 src=""
-                class="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-500"
+                class="mx-auto h-16 w-16 -translate-y-1/2 rounded-full bg-gray-500"
                 alt="Profile Image"
               />
-              <h3 class="mb-2 text-center text-xl font-semibold">
+              <div class="mb-2 mt-0 text-center text-xl font-semibold">
                 {{ .Title }}
-              </h3>
-              <p class="text-center text-green-400">{{ .Params.header }}</p>
-              <p class="text-center">
+              </div>
+              <p class="text-center font-bold text-green-400">
+                {{ .Params.header }}
+              </p>
+              <p class="text-center text-xs font-bold text-stone-400">
                 {{ .Params.major }}
               </p>
-              <p class="text-center">
+              <p class="text-center text-xs font-bold text-stone-400">
                 {{ .Params.college }}
               </p>
-              <p class="mt-2 text-gray-500">{{ .Content }}</p>
+              <p class="mt-5 text-sm text-stone-400">
+                {{ .Content | plainify }}
+              </p>
             </div>
           </li>
         {{ end }}

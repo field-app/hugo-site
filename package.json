@@ -7,7 +7,7 @@
     "hugo": "./node_modules/.bin/hugo/hugo"
   },
   "scripts": {
-    "dev": "concurrently -k -c yellow,blue -n hugo,tailwind npm:watch:hugo npm:watch:tailwind ",
+    "start": "concurrently -k -c yellow,blue -n hugo,tailwind npm:watch:hugo npm:watch:tailwind ",
     "build": "concurrently -k -c yellow,blue -n hugo,tailwind npm:build:hugo npm:build:tailwind ",
     "watch:hugo": "$npm_package_config_hugo server --gc --disableFastRender --config hugo.toml",
     "build:hugo": "$npm_package_config_hugo --gc --cleanDestinationDir --minify --config hugo.toml",
