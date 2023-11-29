@@ -1,6 +1,6 @@
 {{ define "main" }}
   <main>
-    <section class="flex justify-center bg-black">
+    <section class="flex justify-center bg-black ">
       <div>
         <h1 class="leading-normal">
           Share Highlights.
@@ -38,20 +38,20 @@
         where your athletic dreams become reality.
       </p>
       <div class="mt-24 flex justify-center gap-16">
-        {{ partial "card.html"
+        {{ partial "hero-card.html"
           (dict "Title" "Connect with Recruiters"
           "Subtitle" "Showcase your athletic talents and connect directly with recruiters and scouts looking for the next big sports stars."
-          "ImagePath" "/images/binoculars-solid.png")
+          "IconClass" "fa-binoculars")
         }}
-        {{ partial "card.html"
+        {{ partial "hero-card.html"
           (dict "Title" "Build Your Brand"
           "Subtitle" "Create engaging content, share your journey, and gain a loyal following of fans, friends, and mentors."
-          "ImagePath" "/images/bullhorn-solid.png")
+          "IconClass" "fa-bullhorn")
         }}
-        {{ partial "card.html"
+        {{ partial "hero-card.html"
           (dict "Title" "It's 100% Free"
           "Subtitle" "Field is committed to helping young athletes succeed regardless of race, gender, or economic status, and that's why it's completely free for athletes."
-          "ImagePath" "/images/heart-solid.png")
+          "IconClass" "fa-heart")
         }}
       </div>
     </section>
@@ -93,24 +93,24 @@
       <h2 class="text-center max-w-xl mx-auto">Empowering Recruiters to Discover Talent</h2>
       <p class="text-center max-w-4xl mx-auto text-stone-400">Field isn't just a game-changer for athletes; it's an essential tool for recruiters and scouts seeking the next generation of sports stars. We've designed Field with powerful features to simplify your talent search and connect you with promising athletes.</p>
       <div class="flex gap-10 justify-center mt-24">
-      {{ partial "card.html"
+      {{ partial "hero-card.html"
           (dict "Title" "Streamlined Talent Discovery"
           "Subtitle" "Field offers a comprehensive platform to discover talent from a wide range of sports. Our search and filter tools allow recruiters to pinpoint athletes who match their specific criteria quickly."
-          "ImagePath" "/images/filter-solid.png"
+          "IconClass" "fa-filter"
           "dark" true
           )
         }}
-        {{ partial "card.html"
+        {{ partial "hero-card.html"
           (dict "Title" "In-Depth Athlete Profiles"
           "Subtitle" "Our athlete profiles offer a detailed view of each prospect's skills, achievements, and athletic journey. It's all presented in a clear and organized format, making it easy to evaluate potential recruits."
-          "ImagePath" "/images/address-card-solid.png"
+          "IconClass" "fa-address-card"
           "dark" true
           )
         }}
-        {{ partial "card.html"
+        {{ partial "hero-card.html"
           (dict "Title" "Efficient Communication"
           "Subtitle" "Field streamlines communication, allowing you to send messages, share information, and schedule evaluations effortlessly. Say goodbye to inefficient and time-consuming processes."
-          "ImagePath" "/images/comments-solid.png"
+          "IconClass" "fa-comments"
           "dark" true
           )
         }}
@@ -123,7 +123,9 @@
         <h3>Here’s what coaches have to say:</h3>
       </div>
       <div class="bg-stone-800 p-3 rounded-lg flex flex-col justify-around gap-10 basis-1/2">
-        <blockquote class="font-bold text-lg before:content-['“'] before:block before:text-8xl before:text-green-400 after:content-['”'] after:block after:text-end after:text-8xl after:text-green-400">
+        <blockquote class="font-bold text-lg before:content-['\f10d'] before:font-['FontAwesome'] 
+                          before:font-black before:block before:text-6xl before:text-green-400 
+                          after:content-['\f10e'] after:block after:font-['FontAwesome'] after:font-black  after:text-end after:text-6xl after:text-green-400">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec erat tortor, lacinia non vehicula nec, luctus id ligula. Quisque eget massa eu sapien eleifend fringilla. Sed ornare diam at neque egestas posuere.
         </blockquote>
         <div class="flex justify-around items-center">
@@ -160,6 +162,8 @@
       <div class="basis-1/2">
         {{ partial "interest-list.html" }}
       </div>
+      
     </section>
+    {{ partial "carousel.html" }}
   </main>
 {{ end }}
