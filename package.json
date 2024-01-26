@@ -4,15 +4,16 @@
   "description": "The static website for marketing purposes for Field.",
   "config": {
     "hugoDir": "./node_modules/.bin/hugo",
-    "hugo": "./node_modules/.bin/hugo/hugo"
+    "hugo": "./node_modules/.bin/hugo/hugo --gc --config hugo.toml",
+    "tailwindStyles": "./assets/css/style.css"
   },
   "scripts": {
     "dev": "concurrently -k -c yellow,blue -n hugo,tailwind npm:watch:hugo npm:watch:tailwind ",
     "build": "concurrently -k -c yellow,blue -n hugo,tailwind npm:build:hugo npm:build:tailwind ",
-    "watch:hugo": "$npm_package_config_hugo server --gc --disableFastRender --config hugo.toml",
-    "build:hugo": "$npm_package_config_hugo --gc --cleanDestinationDir --minify --config hugo.toml",
-    "build:tailwind": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
-    "watch:tailwind": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "watch:hugo": "npx wait-on $npm_package_config_tailwindStyles && $npm_package_config_hugo server --disableFastRender --baseURL http://localhost",
+    "build:hugo": "npx wait-on $npm_package_config_tailwindStyles && $npm_package_config_hugo --cleanDestinationDir --minify",
+    "build:tailwind": "npx tailwindcss -i ./assets/css/main.css -o $npm_package_config_tailwindStyles",
+    "watch:tailwind": "npx tailwindcss -i ./assets/css/main.css -o $npm_package_config_tailwindStyles --watch",
     "format:check": "prettier . --check",
     "format:all": "prettier . --write",
     "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination $npm_package_config_hugoDir"
@@ -35,5 +36,8 @@
   },
   "otherDependencies": {
     "hugo": "0.119.0"
+  },
+  "dependencies": {
+    "wait-on": "^7.2.0"
   }
 }
