@@ -1,43 +1,19 @@
 {
-  "name": "field-marketing",
-  "version": "1.0.0",
-  "description": "The static website for marketing purposes for Field.",
-  "config": {
-    "hugoDir": "./node_modules/.bin/hugo",
-    "hugo": "./node_modules/.bin/hugo/hugo --gc --config hugo.toml",
-    "tailwindStyles": "./assets/css/style.css"
-  },
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "concurrently -k -c yellow,blue -n hugo,tailwind npm:watch:hugo npm:watch:tailwind ",
-    "build": "concurrently -k -c yellow,blue -n hugo,tailwind npm:build:hugo npm:build:tailwind ",
-    "watch:hugo": "npx wait-on $npm_package_config_tailwindStyles && $npm_package_config_hugo server --disableFastRender --baseURL http://localhost",
-    "build:hugo": "npx wait-on $npm_package_config_tailwindStyles && $npm_package_config_hugo --cleanDestinationDir --minify",
-    "build:tailwind": "npx tailwindcss -i ./assets/css/main.css -o $npm_package_config_tailwindStyles",
-    "watch:tailwind": "npx tailwindcss -i ./assets/css/main.css -o $npm_package_config_tailwindStyles --watch",
-    "format:check": "prettier . --check",
-    "format:all": "prettier . --write",
-    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination $npm_package_config_hugoDir"
-  },
-  "contributors": [
-    {
-      "name": "Chris Holland",
-      "email": "chris@thefieldapp.com",
-      "url": "https://github.com/chrishollandaise"
-    }
-  ],
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^8.2.2",
-    "hugo-installer": "^4.0.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "tailwindcss": "^3.3.5"
-  },
-  "otherDependencies": {
-    "hugo": "0.119.0"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "wait-on": "^7.2.0"
+    "@astrojs/check": "^0.5.9",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.5.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
   }
 }
