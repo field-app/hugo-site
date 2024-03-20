@@ -1,16 +1,130 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<main></main>
-	</body>
-</html>
+<BaseLayout>
+    <section>
+        <div>
+            <h1>Share Highlights. Get Noticed.</h1>
+            <p>
+                Ready to take your sports career to the next level? Join the
+                community of young athletes who are using Field to achieve their
+                dreams!
+            </p>
+            <a>Request Beta Access</a>
+        </div>
+        <div>
+            <img alt="image of a football player" />
+        </div>
+    </section>
+
+    <section class="bg-field-white text-field-black">
+        <h2>Unleash Your Athletic Potential</h2>
+        <p>
+            Field is not just a platform; it's your key to a world of
+            opportunities. Connect with recruiters, gain fans, and take your
+            athletic journey to the next level. Showcase your skills and build
+            your brand on Field, where your athletic dreams become reality.
+        </p>
+        <ul>
+            <Card
+                icon="binoculars"
+                title="Connect with Recruiters"
+                desc="Showcase your athletic talents and connect directly with recruiters and scouts looking for the next big sports stars."
+            />
+            <Card
+                icon="binoculars"
+                title="Build Your Brand"
+                desc="Create engaging content, share your journey, and gain a loyal following of fans, friends, and mentors."
+            />
+            <Card
+                icon="binoculars"
+                title="It's 100% Free"
+                desc="Field is committed to helping young athletes succeed regardless of race, gender, or economic status, and that's why it's completely free for athletes."
+            />
+        </ul>
+    </section>
+    <section class="bg-field-white text-field-black">
+        <div>
+            <h2>Unmatched User Interface for Athlete Profiles</h2>
+            <p>
+                <strong>Effortless Data Entry: </strong> Update your athletic statistics,
+                achievements, and personal information with ease. Our streamlined
+                interface ensures that you spend less time on data entry and more
+                time pursuing your passion.
+            </p>
+            <p>
+                <strong>Customizable Profile: </strong> Your profile is entirely
+                yours. Tailor it to reflect your unique journey, highlighting what
+                matters most to you and potential recruiters. Upload photos, videos,
+                and posts that showcase your skills and personality.
+            </p>
+            <p>
+                <strong>Performance Metrics: </strong> Input essential metrics like
+                personal bests, scores, rankings, and more. Our platform allows you
+                to present your athletic accomplishments clearly and comprehensively.
+            </p>
+        </div>
+        <div>
+            <img alt="picture demonstrating app" />
+        </div>
+    </section>
+    <section>
+        <h2>Empowering Recruiters to Discover Talent</h2>
+        <p>
+            Field isn't just a game-changer for athletes; it's an essential tool
+            for recruiters and scouts seeking the next generation of sports
+            stars. We've designed Field with powerful features to simplify your
+            talent search and connect you with promising athletes.
+        </p>
+        <Card
+            icon="filter"
+            title="Streamlined Talent Discovery"
+            desc="Field offers a comprehensive platform to discover talent from a wide range of sports. Our search and filter tools allow recruiters to pinpoint athletes who match their specific criteria quickly."
+        />
+        <Card
+            icon="id"
+            title="In-Depth Athlete Profiles"
+            desc="Our athlete profiles offer a detailed view of each prospect's skills, achievements, and athletic journey. It's all presented in a clear and organized format, making it easy to evaluate potential recruits."
+        />
+        <Card
+            icon="bubbles"
+            title="Efficient Communication"
+            desc="Field streamlines communication, allowing you to send messages, share information, and schedule evaluations effortlessly. Say goodbye to inefficient and time-consuming processes."
+        />
+    </section>
+    <section>
+        <div>
+            <h2>Current Recruitment Process is Outdated</h2>
+            <p>
+                Traditionally, recruitment has been plagued by intermediaries,
+                limited visibility, and inefficient communication. Field is
+                disrupting the status quo with a streamlined and transparent
+                approach. Direct connections between athletes and recruiters, a
+                diverse talent pool, all-in-one hub for recruitment, data-driven
+                decision-making, and brand visibility are revolutionizing the
+                industry. Field is ushering in a new era where efficiency and
+                direct connections are paramount.
+            </p>
+            <strong>Here’s what coaches have to say:</strong>
+        </div>
+        <div>"Testmoninal"</div>
+    </section>
+    <section>
+        <div class="bg-field-white text-field-black">
+            <h2>Explore Our Blog Page</h2>
+            <p>
+                Looking to unravel the secrets of successful athletic
+                recruitment and get expert insights on how to stand out in your
+                sports journey? Our blog is your ultimate resource for all
+                things related to sports recruitment, athlete success stories,
+                training tips, and much more. If you're eager to learn more
+                about how to make your mark in the sports world and achieve your
+                goals, our blog is a must-visit.
+            </p>
+            <a href="/blog">Visit Blog</a>
+        </div>
+        <div>"Contact Form"</div>
+    </section>
+</BaseLayout>
