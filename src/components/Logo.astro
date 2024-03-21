@@ -1,8 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+const { class: className } = Astro.props;
 ---
 
-<a href="/" class="flex gap-2 items-center">
+<a href="/" class:list={["flex gap-2 items-center", className]}>
     <Icon name="logo" class=`inline text-4xl` />
     <span class="text-3xl">Field</span>
 </a>

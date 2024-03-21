@@ -1,9 +1,30 @@
 ---
-const { icon, title, desc } = Astro.props;
+import { Icon } from "astro-icon/components";
+const { class: className, icon, title, desc, darkMode = false } = Astro.props;
+
+let bgColor = "bg-stone-200";
+let titleColor = "text-black";
+let descColor = titleColor;
+
+if (darkMode) {
+    bgColor = "bg-stone-800";
+    titleColor = "text-white";
+    descColor = "text-stone-400";
+}
 ---
 
-<div>
-    <img alt={icon} />
-    <h3>{title}</h3>
-    <p>{desc}</p>
+<div
+    class:list={[
+        `${bgColor} flex max-w-sm flex-col items-center rounded-xl px-5 py-16`,
+        className,
+    ]}
+>
+    <Icon
+        name=`mdi:${icon}`
+        class="fa-solid {{ .IconClass }} text-8xl text-green-400"
+    />
+    <h3 class=`${titleColor} text-center`>{title}</h3>
+    <p class=`${descColor} text-center`>
+        {desc}
+    </p>
 </div>

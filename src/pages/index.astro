@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
 ---
 
 <BaseLayout>
-    <section>
+    <Section>
         <div>
             <h1>Share Highlights. Get Noticed.</h1>
             <p>
@@ -17,9 +18,9 @@ import Card from "../components/Card.astro";
         <div>
             <img alt="image of a football player" />
         </div>
-    </section>
+    </Section>
 
-    <section class="bg-field-white text-field-black">
+    <Section class="fluid bg-field-white text-field-black">
         <h2>Unleash Your Athletic Potential</h2>
         <p>
             Field is not just a platform; it's your key to a world of
@@ -27,25 +28,28 @@ import Card from "../components/Card.astro";
             athletic journey to the next level. Showcase your skills and build
             your brand on Field, where your athletic dreams become reality.
         </p>
-        <ul>
+        <ul class="flex gap-5">
             <Card
+                class="basis-1/3"
                 icon="binoculars"
                 title="Connect with Recruiters"
                 desc="Showcase your athletic talents and connect directly with recruiters and scouts looking for the next big sports stars."
             />
             <Card
-                icon="binoculars"
+                class="basis-1/3"
+                icon="megaphone"
                 title="Build Your Brand"
                 desc="Create engaging content, share your journey, and gain a loyal following of fans, friends, and mentors."
             />
             <Card
-                icon="binoculars"
+                class="basis-1/3"
+                icon="heart"
                 title="It's 100% Free"
                 desc="Field is committed to helping young athletes succeed regardless of race, gender, or economic status, and that's why it's completely free for athletes."
             />
         </ul>
-    </section>
-    <section class="bg-field-white text-field-black">
+    </Section>
+    <Section class="bg-field-white text-field-black">
         <div>
             <h2>Unmatched User Interface for Athlete Profiles</h2>
             <p>
@@ -69,8 +73,8 @@ import Card from "../components/Card.astro";
         <div>
             <img alt="picture demonstrating app" />
         </div>
-    </section>
-    <section>
+    </Section>
+    <Section>
         <h2>Empowering Recruiters to Discover Talent</h2>
         <p>
             Field isn't just a game-changer for athletes; it's an essential tool
@@ -78,24 +82,32 @@ import Card from "../components/Card.astro";
             stars. We've designed Field with powerful features to simplify your
             talent search and connect you with promising athletes.
         </p>
-        <Card
-            icon="filter"
-            title="Streamlined Talent Discovery"
-            desc="Field offers a comprehensive platform to discover talent from a wide range of sports. Our search and filter tools allow recruiters to pinpoint athletes who match their specific criteria quickly."
-        />
-        <Card
-            icon="id"
-            title="In-Depth Athlete Profiles"
-            desc="Our athlete profiles offer a detailed view of each prospect's skills, achievements, and athletic journey. It's all presented in a clear and organized format, making it easy to evaluate potential recruits."
-        />
-        <Card
-            icon="bubbles"
-            title="Efficient Communication"
-            desc="Field streamlines communication, allowing you to send messages, share information, and schedule evaluations effortlessly. Say goodbye to inefficient and time-consuming processes."
-        />
-    </section>
-    <section>
-        <div>
+        <ul class="flex gap-5">
+            <Card
+                class="basis-1/3"
+                icon="filter"
+                title="Streamlined Talent Discovery"
+                desc="Field offers a comprehensive platform to discover talent from a wide range of sports. Our search and filter tools allow recruiters to pinpoint athletes who match their specific criteria quickly."
+                darkMode={true}
+            />
+            <Card
+                class="basis-1/3"
+                icon="identification-card"
+                title="In-Depth Athlete Profiles"
+                desc="Our athlete profiles offer a detailed view of each prospect's skills, achievements, and athletic journey. It's all presented in a clear and organized format, making it easy to evaluate potential recruits."
+                darkMode={true}
+            />
+            <Card
+                class="basis-1/3"
+                icon="conversation"
+                title="Efficient Communication"
+                desc="Field streamlines communication, allowing you to send messages, share information, and schedule evaluations effortlessly. Say goodbye to inefficient and time-consuming processes."
+                darkMode={true}
+            />
+        </ul>
+    </Section>
+    <Section class="fluid flex">
+        <div class="basis-1/2">
             <h2>Current Recruitment Process is Outdated</h2>
             <p>
                 Traditionally, recruitment has been plagued by intermediaries,
@@ -109,10 +121,10 @@ import Card from "../components/Card.astro";
             </p>
             <strong>Here’s what coaches have to say:</strong>
         </div>
-        <div>"Testmoninal"</div>
-    </section>
-    <section>
-        <div class="bg-field-white text-field-black">
+        <div class="">"Testmoninal"</div>
+    </Section>
+    <Section class="flex fluid">
+        <div class="bg-field-white text-field-black fluid basis-1/2">
             <h2>Explore Our Blog Page</h2>
             <p>
                 Looking to unravel the secrets of successful athletic
@@ -126,5 +138,5 @@ import Card from "../components/Card.astro";
             <a href="/blog">Visit Blog</a>
         </div>
         <div>"Contact Form"</div>
-    </section>
+    </Section>
 </BaseLayout>
